@@ -1157,11 +1157,11 @@
 
 .annotationLayer :is(.linkAnnotation,.buttonWidgetAnnotation.pushButton):not(.hasBorder) > a:hover{
     opacity:0.2;
-    background-color:rgb(255 255 0);
+    background-color:rgb(43 68 109);
   }
 
 .annotationLayer .linkAnnotation.hasBorder:hover{
-    background-color:rgb(255 255 0 / 0.2);
+    background-color:rgb(43 68 109 / 0.2);
   }
 
 .annotationLayer .hasBorder{
