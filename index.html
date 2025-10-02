@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chaewoon Bae</title>
+  <title>PDF Viewer Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -12,19 +13,19 @@
     }
     #pdf-viewer {
       width: 100%;
-      height: 100vh;
+      height: 100%;
+      min-height: 500px; /* 모바일 최소 높이 */
     }
   </style>
 </head>
 <body>
-  <!-- PDF가 표시될 영역 -->
   <div id="pdf-viewer"></div>
 
-  <!-- 커스텀 PDFObject 코드 -->
   <script src="pdfobject-custom.js"></script>
   <script>
     PDFObject.embed("./pdfjs-5/web/CV_ChaewoonBae.pdf", "#pdf-viewer", {
-      PDFJS_URL: "./pdfjs-5/web/viewer.html"   // PDF.js 뷰어 경로
+      PDFJS_URL: "./pdfjs-5/web/viewer.html",
+      omitInlineStyles: false
     });
   </script>
 </body>
