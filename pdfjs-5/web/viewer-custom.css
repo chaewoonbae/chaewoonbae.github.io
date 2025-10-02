@@ -4,6 +4,20 @@
 #presentationMode {          /* 필요시 다른 버튼 ID 추가 */
   display: none !important;
 }
+#sidebarToggle {
+  display: none !important;
+}
+
+/* ---------------------------
+   2. 강조표시, 텍스트, 그리기, 이미지 버튼 숨기기
+----------------------------*/
+#highlightAnnotation,
+#textAnnotation,
+#inkAnnotation,
+#stampAnnotation,
+#attachFile {
+  display: none !important;
+}
 
 /* ---------------------------
    2. 링크 hover 색상 변경
