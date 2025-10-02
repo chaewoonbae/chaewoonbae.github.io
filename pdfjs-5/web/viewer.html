@@ -798,9 +798,8 @@ See https://github.com/adobe-type-tools/cmap-resources
           "attachFile"
         ];
     
-        hideButtons.forEach(id => {
-          const btn = document.getElementById(id);
-          if (btn) btn.style.display = "none";
+        hideClasses.forEach(cls => {
+            document.querySelectorAll("." + cls).forEach(el => el.style.display = "none");
         });
       });
     </script>
