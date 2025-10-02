@@ -783,5 +783,26 @@ See https://github.com/adobe-type-tools/cmap-resources
 
     </div> <!-- outerContainer -->
     <div id="printContainer"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 숨길 버튼 ID 목록
+        const hideButtons = [
+          "sidebarToggle",
+          "secondaryToolbarToggle",
+          "openFile",
+          "presentationMode",
+          "highlightAnnotation",
+          "textAnnotation",
+          "inkAnnotation",
+          "stampAnnotation",
+          "attachFile"
+        ];
+    
+        hideButtons.forEach(id => {
+          const btn = document.getElementById(id);
+          if (btn) btn.style.display = "none";
+        });
+      });
+    </script>
   </body>
 </html>
