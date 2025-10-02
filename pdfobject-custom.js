@@ -69,7 +69,7 @@
         let page = opt.page || false;
         let pdfOpenParams = opt.pdfOpenParams || {};
         let omitInlineStyles = (typeof opt.omitInlineStyles === "boolean") ? opt.omitInlineStyles : false;
-        let PDFJS_URL = opt.PDFJS_URL || "/pdfjs/web/viewer.html"; // 기본 경로
+        let PDFJS_URL = opt.PDFJS_URL || "/pdfjs-5/web/viewer.html"; // 기본 경로
 
         let targetNode = getTargetElement(selector);
         let pdfOpenFragment = "";
