@@ -1163,6 +1163,9 @@
 .annotationLayer .linkAnnotation.hasBorder:hover{
     background-color:rgb(43 68 109 / 0.2);
   }
+.annotationLayer .linkAnnotation:active {
+  background-color:rgb(43,68,109 / 0.2);
+}
 
 .annotationLayer .hasBorder{
     background-size:100% 100%;
