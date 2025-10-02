@@ -22,10 +22,14 @@
 /* ---------------------------
    2. 링크 hover 색상 변경
 ----------------------------*/
-.linkAnnotation:hover {
+/* 링크 hover 기본 yellow 제거 */
+.annotationLayer .linkAnnotation:hover {
   background-color: rgba(43,68,109,0.5) !important;
-  /* 투명도 조절 원하면 아래처럼 가능 */
-  /* background-color: rgba(0,0,128,0.5) !important; */
+}
+
+/* optional: 링크 강조 테두리 없애기 */
+.annotationLayer .linkAnnotation {
+  outline: none !important;
 }
 
 /* ---------------------------
