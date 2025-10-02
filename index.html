@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Viewer Demo</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+    #pdf-viewer {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <!-- PDF가 표시될 영역 -->
+  <div id="pdf-viewer"></div>
+
+  <!-- 커스텀 PDFObject 코드 -->
+  <script src="pdfobject-custom.js"></script>
+  <script>
+    PDFObject.embed("sample.pdf", "#pdf-viewer", {
+      PDFJS_URL: "pdfjs/web/viewer.html"   // PDF.js 뷰어 경로
+    });
+  </script>
+</body>
+</html>
