@@ -4,23 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chaewoon Bae</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/logo.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/logo.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/logo.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/logo.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/logo.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/logo.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/logo.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/logo.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/logo.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/logo.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/logo.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <script>
+      (function() {
+        const timestamp = Date.now(); // 캐시 방지를 위한 쿼리스트링
+    
+        // 아이콘/파비콘 목록
+        const links = [
+          { rel: "apple-touch-icon", sizes: "57x57", href: "assets/logo.ico/apple-icon-57x57.png" },
+          { rel: "apple-touch-icon", sizes: "60x60", href: "assets/logo.ico/apple-icon-60x60.png" },
+          { rel: "apple-touch-icon", sizes: "72x72", href: "assets/logo.ico/apple-icon-72x72.png" },
+          { rel: "apple-touch-icon", sizes: "76x76", href: "assets/logo.ico/apple-icon-76x76.png" },
+          { rel: "apple-touch-icon", sizes: "114x114", href: "assets/logo.ico/apple-icon-114x114.png" },
+          { rel: "apple-touch-icon", sizes: "120x120", href: "assets/logo.ico/apple-icon-120x120.png" },
+          { rel: "apple-touch-icon", sizes: "144x144", href: "assets/logo.ico/apple-icon-144x144.png" },
+          { rel: "apple-touch-icon", sizes: "152x152", href: "assets/logo.ico/apple-icon-152x152.png" },
+          { rel: "apple-touch-icon", sizes: "180x180", href: "assets/logo.ico/apple-icon-180x180.png" },
+          { rel: "icon", type: "image/png", sizes: "192x192", href: "assets/logo.ico/android-icon-192x192.png" },
+          { rel: "icon", type: "image/png", sizes: "32x32", href: "assets/logo.ico/favicon-32x32.png" },
+          { rel: "icon", type: "image/png", sizes: "96x96", href: "assets/logo.ico/favicon-96x96.png" },
+          { rel: "icon", type: "image/png", sizes: "16x16", href: "assets/logo.ico/favicon-16x16.png" },
+          { rel: "manifest", href: "/manifest.json" }
+        ];
+    
+        links.forEach(info => {
+          const link = document.createElement("link");
+          Object.keys(info).forEach(attr => link.setAttribute(attr, info[attr]));
+          // 아이콘만 쿼리스트링 붙이기
+          if (info.rel.includes("icon") || info.rel.includes("apple-touch-icon")) {
+            link.href += "?v=" + timestamp;
+          }
+          document.head.appendChild(link);
+        });
+    
+        // MS용 메타 태그
+        const meta1 = document.createElement("meta");
+        meta1.name = "msapplication-TileColor";
+        meta1.content = "#ffffff";
+        document.head.appendChild(meta1);
+    
+        const meta2 = document.createElement("meta");
+        meta2.name = "msapplication-TileImage";
+        meta2.content = "assets/logo.ico/ms-icon-144x144.png?v=" + timestamp;
+        document.head.appendChild(meta2);
+    
+        const meta3 = document.createElement("meta");
+        meta3.name = "theme-color";
+        meta3.content = "#ffffff";
+        document.head.appendChild(meta3);
+      })();
+    </script>
     <style>
       html, body {
         margin: 0;
