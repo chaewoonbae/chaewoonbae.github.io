@@ -6,9 +6,8 @@
     <title>Chaewoon Bae</title>
     <script>
       (function() {
-        const timestamp = Date.now(); // 캐시 방지를 위한 쿼리스트링
+        const timestamp = Date.now();
     
-        // 아이콘/파비콘 목록
         const links = [
           { rel: "apple-touch-icon", sizes: "57x57", href: "assets/logo.ico/apple-icon-57x57.png" },
           { rel: "apple-touch-icon", sizes: "60x60", href: "assets/logo.ico/apple-icon-60x60.png" },
@@ -29,14 +28,13 @@
         links.forEach(info => {
           const link = document.createElement("link");
           Object.keys(info).forEach(attr => link.setAttribute(attr, info[attr]));
-          // 아이콘만 쿼리스트링 붙이기
+
           if (info.rel.includes("icon") || info.rel.includes("apple-touch-icon")) {
             link.href += "?v=" + timestamp;
           }
           document.head.appendChild(link);
         });
     
-        // MS용 메타 태그
         const meta1 = document.createElement("meta");
         meta1.name = "msapplication-TileColor";
         meta1.content = "#ffffff";
